@@ -1,7 +1,9 @@
 package com.example.androidbasics
 
+import java.util.*
 
-    fun main () {
+
+fun main () {
 
         //Integer Types
         val myByte :Byte = 1
@@ -84,15 +86,15 @@ package com.example.androidbasics
         }
 
         //while loop
-        val condition=true
-        while(condition){
-            //Code to be executed
-        }
-
-        //do while loop
-        do{
-           //Code to be executed
-        }while (condition)
+//        val condition=true
+//        while(condition){
+//            //Code to be executed
+//        }
+//
+//        //do while loop
+//        do{
+//           //Code to be executed
+//        }while (condition)
 
         //for loop
         for (num in 1..10)
@@ -101,4 +103,23 @@ package com.example.androidbasics
             println("$num")
         for(i in 10 downTo 1 step 2)
             println("$i")
+        print(avg(5.0,12.5))
+
+        //nullable
+        var nullableName : String? = "Sans"
+//        nullableName = null
+        nullableName?.let { println(it.uppercase(Locale.getDefault())) }
+        // ?: Elvis Operator
+        val fullName=nullableName?:"Sanskrita"
+
+        //!! ->Not null assertion Operator The !! operator converts a nullable type to a non-null type, and throws a NullPointerException if the nullable type holds a null value.
+        val nullableName5: String? = null
+        nullableName5!!.toLowerCase() // Results in NullPointerException
+        //?.->safe call operator
+
     }
+//Method- a function within class
+//Function
+fun avg(a:Double,b:Double):Double{
+    return (a+b)/2
+}
