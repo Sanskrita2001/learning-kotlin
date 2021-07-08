@@ -17,6 +17,7 @@ fun main(){
     println("Ram is ${p2.ram}")
     p2.calcPrice()
     var p3 = MobilePhone(model = "Note 10 Pro")
+    p3.chargeBattery(60)
 }
 
 class MobilePhone (osName: String = "Android",brand: String = "Redmi",model:String="Note 7") //Primary constructor
@@ -24,6 +25,7 @@ class MobilePhone (osName: String = "Android",brand: String = "Redmi",model:Stri
     // Member Variables (Properties) of the class
     lateinit var color: String
     var brand: String?= null
+    var battery: Int = 25
     var model: String?= null
     private set
     var price:Int = 10000
@@ -50,6 +52,10 @@ class MobilePhone (osName: String = "Android",brand: String = "Redmi",model:Stri
     //Member function
     fun calcPrice(){
         println("Price of $brand $model is $price")
+    }
+    fun chargeBattery(chargedBy: Int){
+        println("Battery was at $battery and is at ${battery+chargedBy} now")
+        battery += chargedBy
     }
 }
 
